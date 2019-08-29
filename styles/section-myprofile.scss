@@ -1,0 +1,98 @@
+
+.section-myprofile__li-menu{
+
+text-transform: uppercase;
+@include text-style-normal(12px);
+
+	&_left{
+	width: 178px;
+	}
+	&_right{
+	width: 120px;
+}
+}
+.section-myprofile__pic{
+    position: absolute; 
+	top: 27%;
+	left: 20%;
+
+}
+.section-myprofile__pic-myprofile{
+	width: 30px;
+    height: 30px;
+    background: url(../../img/myprofile.png);
+}
+.section-myprofile__pic-edit{
+	width: 24px;
+    height: 24px;
+    background: url(../../img/edit.png);
+}
+
+
+.section-myprofile__li{
+	display: inline-block;
+	position: relative;
+	height: 65px;
+	box-sizing: border-box;
+
+
+&:hover{
+	background:#f8f3f0;
+	border-bottom: 2px solid $green;
+}
+}
+
+.section-myprofile__navigation-button {
+	
+	margin-top: 25px;
+    margin-left: 40%;
+	
+	display:block;
+	color: $dark-grey;
+
+	-webkit-transition: all 0.2s ease-in-out 0s;
+	-moz-transition: all 0.2s ease-in-out 0s;
+	-o-transition: all 0.2s ease-in-out 0s;
+	-ms-transition: all 0.2s ease-in-out 0s;
+	transition: all 0.2s ease-in-out 0s;
+}
+
+
+
+.section-myprofile__sub-menu {
+	display: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	position: absolute;
+	top: 65px;
+	left: 0px;
+	background: #ffffff;
+}
+
+.section-myprofile__sub-menu-li {
+	display:block;
+	float: none;
+	background:none;
+	margin:0;
+	padding:0;
+}
+.section-myprofile__submenu-button {
+	@include text-style-normal(12px);
+	display:block;
+	color: $dark-grey;
+	background:#ffffff;
+	padding:16px;
+	text-align: left;
+	text-transform: uppercase;
+
+&:hover{
+	background:#f8f3f0;
+	text-decoration: none;
+	border-left: 2px solid $green;
+}
+}
+.section-myprofile__li:hover > .section-myprofile__sub-menu{
+	display: block;
+}
+

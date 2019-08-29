@@ -1,0 +1,224 @@
+
+
+
+.section-chart {
+  height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "OpenSans", sans-serif;
+  background:white; }
+
+.section-chart_graph {
+  height: 151px;
+  width: 100%;}
+
+.section-chart_graph-info_differiance {
+  font-size: 24px;
+  position: relative;
+  top: 0;
+  left: 20%;
+  z-index: 1;
+  color: white; }
+
+.section-chart_graph-info_ratio {
+  font-size: 14px;
+  position: relative;
+  left: 20%;
+  top: 0;
+  z-index: 1;
+  color: white;
+  opacity: 0.5; }
+
+.section-chart_geolocation {
+  height: 87px;
+  text-align: left;
+  color: #96887a;}
+
+.section-chart_geolocation-datetime {
+  font-size: 12px;
+  opacity: 0.8;
+  position: relative;
+  top: 25%;
+  left: 7.5%; }
+
+.section-chart_geolocation-location {
+  font-size: 18px;
+  position: relative;
+  top: 26%;
+  left: 7.5%; }
+
+.section-chart_stock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 65px;
+  margin: 10px;
+  margin-bottom: 50px;}
+
+.section-chart_stock-apple {
+  flex-grow: 0;
+  border-bottom-left-radius: 1px;
+  border-top-left-radius: 1px;
+  margin-left: 0.5px;
+  flex-basis: calc(-1px + 50%); }
+
+.section-chart_stock-apple_name {
+  font-size: 14px;
+  position: relative;
+  left: 0;
+  opacity: 0.5;
+  text-transform: uppercase;
+  top: -2%; }
+
+.section-chart_stock-differiance_apple-text {
+  font-size: 14px;
+  position: relative;
+  left: 0;
+  opacity: 0.5;
+  top: -2%; }
+
+.section-chart_stock-differiance {
+  flex-grow: 1;
+  margin-left: 2px; }
+
+.section-chart_stock-differiance_yearlychange_summa {
+  font-size: 18px;
+  color: white;
+  position: relative;
+  top: 30%;
+}
+
+.section-chart_stock-differiance_yearlychange {
+  background: $section-chart_color_graph-green;
+  border-radius: 4px;
+  margin-right: 0.5px;
+  width: 100%;
+  height: 100%;
+  margin-top: 0; }
+
+.section-chart_stock-apple_diagramm {
+  width: 100% !important; }
+
+.section-chart_graph-allblock {
+  height: 100%;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  background: $section-chart_color_graph_top-green; }
+
+.section-chart_graph-halfblock {
+  height: 50%;
+  top: -50%;
+  background: $section-chart_color_graph-green; }
+
+.section-chart_graph-allblock, .section-chart_graph-halfblock {
+
+  padding: 0 10px; }
+
+.section-chart_graph-allblock, .section-chart_graph-halfblock, .section-chart_graph-allblock_line, .section-chart_graph-halfblock_diagramm {
+  position: relative; }
+
+.section-chart_graph-allblock_line {
+  top: 40px;
+  z-index: 5;
+  height: 60% !important; }
+
+.section-chart_graph-halfblock_diagramm {
+  bottom: 1%; }
+
+.section-chart_graph-info {
+  position: absolute;
+  top: 10px;
+  left: 10px; }
+
+.section-chart_information {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  height: 70px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.section-chart_information-marcetcup {
+  flex-grow: 1;
+  background: $section-chart_color_information;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+  margin-left: 0.5px; }
+
+.section-chart_information-sharestraded {
+  flex-grow: 1;
+  background: $section-chart_color_information;
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  margin-right: 0.5px; }
+
+.section-chart_modal-form {
+  width: 338px;
+  height: 52px;
+  border-radius: 5px;
+  border: 3px solid $section-chart_color_modal-window;
+  background: white;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -150px;
+  display: none;
+  z-index: 5;
+  padding: 10px 10px; }
+
+.section-chart_modal-form_modal_close {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  position: absolute;
+  top: 1px;
+  right: 0;
+  border: 4px solid $section-chart_color_modal-window;
+  border-radius: 5px;
+
+&:before, &:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: -3px;
+  width: 16px;
+  height: 4px;
+  background: $section-chart_color_modal-window;
+}
+  &:before {
+  transform: rotate(45deg);
+}
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+.section-chart_modal-form_overlay {
+  z-index: 3;
+  position: fixed;
+  background-color: #6699CC;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  display: none; }
+
+.section-chart_information-sharestraded_summa, .section-chart_information-marcetcup_market {
+  position: relative;
+  top: 15%;
+
+  opacity: 0.5; }
+
+.section-chart_information-sharestraded_summa-text, .section-chart_information-marcetcup_market_market-text {
+  font-size: 14px;
+  position: relative;
+  top: 20%;
+
+  opacity: 0.5; }

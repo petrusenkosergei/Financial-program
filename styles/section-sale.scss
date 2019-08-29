@@ -1,0 +1,19 @@
+
+
+.section_sale__pic {
+	position:relative; 
+    left: 20px;
+	content: url('../../img/20%.png');
+    display: block;
+    width: 70px;
+    height: 74px;  
+      -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+}
+.section_sale__pic:checked {
+	content: url('../../img/30%.png');
+}
+
+

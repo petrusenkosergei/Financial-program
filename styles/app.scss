@@ -1,0 +1,140 @@
+//variables
+$app_color_audio: #4daf7b;
+$app_color_video: #e55e3a;
+$app_color_photo: #ebc85e;
+$app_color_other: #b1a599;
+$app_font_family: 'OpenSans', sans-serif;
+
+$section-chart_color_graph_top-green: rgb(84, 188, 117);
+$section-chart_color_graph-green: rgb(77, 175, 123);
+$section-chart_color_information: rgb(246, 240, 236);
+$section-chart_color_modal-window: rgb(142, 128, 113);
+
+
+$light-grey: #f6f0ec;
+$dark-grey: #8e8071;
+$green: #4daf7b;
+
+
+//mixin
+@mixin text-style($font_size, $font_weight: bold, $font_family: $app_font_family) {
+  font-size: $font_size;
+  font-weight: $font_weight;
+  font-family: $font_family;
+}
+@mixin text-style-normal($font_size, $font_weight: normal, $font_family: $app_font_family) {
+  font-size: $font_size;
+  font-weight: $font_weight;
+  font-family: $font_family;
+}
+
+@import "section-navigation";
+@import "section-about";
+@import "section-chart";
+@import "section-statistics";
+@import "section-instagram";
+@import "section-myprofile";
+@import "section-sale";
+@import "section-form";
+@import "section-logo";
+
+
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url(../../fonts/OpenSans-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url(../../fonts/OpenSans-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@media only screen and (min-width: 320px) and  (max-width: 479px) {
+  .margin-bottom {
+    margin-bottom: 5px; } 
+    .navigation__pic{
+   display:none;
+  }
+  .navigation__li-menu > .navigation-button{
+    margin-left: 0%;
+  }
+  .sup{
+    display:none;
+  }
+  }
+
+@media only screen and (min-width: 480px) {
+  .margin-bottom {
+    margin-bottom: 10px; } }
+
+@media only screen and (min-width: 768px) {
+  .margin-bottom {
+    margin-bottom: 40px; } }
+
+.app-wrapper {
+  background-image: url(../../img/background.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat; }
+
+.section-navigation {
+  height: 65px;
+  border-radius: 5px;
+  background: white;
+}
+
+.section-chart {
+  
+  height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "OpenSans", sans-serif; 
+  border-radius: 5px;
+ }
+
+.section-statistics {
+  height: 565px;
+}
+
+.section-myprofile {
+  height: 65px;
+  background:#FFFFFF;
+border-radius: 5px;
+}
+
+.section-sale {
+  height: 75px;
+  width: 30%;
+  float: right;
+
+   }
+
+.section-instagram {
+  height: 420px;
+
+border-radius: 5px;}
+
+.section-form {
+  height: 460px;
+  
+  position: relative;
+  text-align: center;
+  
+  background: white;
+  border-radius: 5px;
+}
+
+  .section-about {
+    height: 310px;
+    display: flex;
+    flex-direction: column; }
+
+    .section-logo {
+      height: 255px;
+      margin-left: 45%;
+
+       }
+

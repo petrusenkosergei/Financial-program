@@ -1,0 +1,23 @@
+{
+  "name": "sass_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass styles/app.scss -o build/styles",
+    "min": "minify -o build/result.min.css build/styles/app.css"
+  },
+  "dependencies": {
+    "reset-css": "latest",
+    "bootstrap": "latest",
+    "jquery": "latest",
+    "jquery-form": "^4.2.2",
+    "multer": "latest",
+    "raphael": "latest",
+    "tooltips": "latest"
+  },
+  "devDependencies": {
+    "node-sass": "^4.7.2",
+    "minifier": "latest"
+  }
+}

@@ -1,0 +1,95 @@
+.section-form__section-title{
+   color: #A3988C;
+   @include text-style-normal(1rem);
+    font-weight: normal;
+    font-size: 1rem; 
+    text-align: left;
+    margin-left: 70px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+
+
+.section-contacts{
+   
+    height: 460px;
+    border: 2px solid black;
+    background-color: #fff;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+}
+.section-form__section-area{
+    margin-top: -11px;
+    border-radius: 5px;
+    width: 305px;
+    display: inline-block;      
+    @include text-style-normal(1rem);
+    
+    border: 1px solid #e5d4c2;
+}
+
+
+.section-title__contacts{
+    height: 40px;
+
+}
+
+.section-title__subject{
+    height: 45px;
+}
+
+
+.section-title__message{
+   min-height: 105px;
+}
+
+.background-footer__checkbox_block{
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    position: relative;
+    cursor: pointer;
+    background-color: green;
+    color: green;    
+    @include text-style-normal(1rem);
+    color: #A3988C;
+
+}
+
+
+.backgroun-footer__sending-row{
+    width: 140px;
+    height: 50px;
+    text-align: right;
+    color: #fff;
+    background-color: #e96d48;
+    border-radius: 5px;
+    margin-top: 29px;
+    display: inline-block;
+    margin-left: 60px;
+}
+
+.section-form__background-footer{
+
+    height: 107px;
+    background-color: #f8f3f0;
+    margin-top: 25px;
+}
+
+.section-title__button{
+    margin-left:-36px;
+    margin-top: -9px;
+    position: absolute;
+}
+
+.background-footer__button{
+    margin-left: 80px;
+    margin-top: 40px;
+    position: absolute;
+}
+
+.empty{
+    height: 1px;
+}

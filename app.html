@@ -1,0 +1,599 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Team project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="node_modules/reset-css/reset.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="styles/app.css">-->
+    <link rel="stylesheet" href="build/result.min.css">
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/geolocation.js"></script>
+    <script src="https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+
+    <script src="js/Chart.bundle.min.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU"></script>
+    <script src="js/date.js"></script>
+
+    <script src="node_modules/raphael/raphael.min.js"></script>
+    <script src="node_modules/jquery-form/dist/jquery.form.min.js"></script>
+    <script src="js/storage-tabs.js"></script>
+    <script src="js/morris.js"></script>
+    <script src="js/storage-stats.js"></script>
+    <script src="js/storage-action.js"></script>
+
+    <script src="js/logos.js"></script>
+
+</head>
+
+<body>
+
+    <div class="app-wrapper">
+
+        <div class="container text-center">
+            <div class="section-logo">
+                <div id="als-logo" class='section-logo__logo-team als-logo'>
+                    <div class="section-logo__background">
+                        <img class="section-logo__background-image" src="img/team6.jpg">
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="section-navigation margin-bottom">
+                                <nav class="navigation">
+                                    <ul class="navigation__menu">
+                                        <li>
+                                            <div class="navigation__li-menu border-right">
+                                                <div class="navigation__pic navigation__pic-checkin"></div>
+                                                <a href="#openModal_checkin" class="navigation-button">Check in
+                                                    <sup class="sup">3</sup>
+                                                </a>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="navigation__li-menu border-right">
+                                                <div class="navigation__pic navigation__pic-events"></div>
+                                                <a href="#openModal_events" class="navigation-button">Events</a>
+
+                                            </div>
+                                        </li>
+
+                                        <li>
+                                            <div class="navigation__li-menu border-right">
+                                                <div class="navigation__pic navigation__pic-account"></div>
+                                                <a href="#openModal_account" class="navigation-button">Account</a>
+
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="navigation__li-menu">
+                                                <div class="navigation__pic navigation__pic-setting"></div>
+                                                <a href="#openModal_settings" class="navigation-button">Settings</a>
+
+                                            </div>
+                                        </li>
+
+                                    </ul>
+
+
+                                </nav>
+                            </div>
+                            <div id="openModal_checkin" class="modalDialog">
+
+                                <div class="modal-style">
+                                    <a href="#close" title="Закрыть" class="close">X</a>
+                                    <p>
+                                        <button class="location" onclick="geoFindMe()" class="center">Show my location</button>
+                                    </p>
+                                    <p>Your recent checkins: </p>
+
+                                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                        </ol>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img class="d-block w-100" src="img/newyork.jpg" alt="First slide">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h5>New York</h5>
+                                                    <p>3 days ago</p>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block w-100" src="img/paris.jpg" alt="Second slide">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h3>Paris</h3>
+                                                    <p>5 days ago</p>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block w-100" src="img/tokyo.jpg" alt="Third slide">
+                                                <div class="carousel-caption d-none d-md-block">
+                                                    <h3>Tokyo</h3>
+                                                    <p>1 week ago</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+
+
+
+                                    <div id="out"></div>
+                                </div>
+                            </div>
+
+                            <div id="openModal_events" class="modalDialog">
+
+                                <div class="modal-style">
+                                    <a href="#close" title="Закрыть" class="close">X</a>
+                                    <p class="location">Your recent activity:</p>
+                                    <ul>
+                                        <li class="modal-style__list">
+                                            <div class="list__avatar list__avatar-01"></div>
+                                            <div class="margin">
+                                                <a class="decoration_none" href="#">anton343</a> liked your post
+                                                <time class="time">35min</time>
+                                            </div>
+                                        </li>
+                                        <li class="modal-style__list">
+                                            <div class="list__avatar list__avatar-02"></div>
+                                            <div class="margin">
+                                                <a class="decoration_none" href="#">it_academy</a> started following you
+                                                <time class="time">1hour</time>
+                                            </div>
+                                        </li>
+
+                                        <li class="modal-style__list">
+                                            <div class="list__avatar list__avatar-03"></div>
+                                            <div class="margin">
+                                                <a class="decoration_none" href="#">darya_k</a> sent you a message
+                                                <time class="time">1hour</time>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div id="out"></div>
+                            </div>
+
+
+                            <div id="openModal_account" class="modalDialog">
+
+                                <div class="modal-style">
+                                    <a href="#close" title="Закрыть" class="close">X</a>
+                                    <div class="model-style__instagram"></div>
+                                    <form action="post.php" method="post" class="form">
+                                        <input id="user" class="input" name="user" type="text" placeholder="Username" required>
+                                        <input id="email" class="input" name="email" type="password" placeholder="Password" required>
+                                        <input class="button" type="submit" value="Log in">
+                                    </form>
+                                    <div id="out"></div>
+                                </div>
+                            </div>
+
+                            <div id="openModal_settings" class="modalDialog">
+
+                                <div class="modal-style">
+                                    <a href="#close" title="Закрыть" class="close">X</a>
+                                    <a class="display-block" href="http://it-academy.by">
+                                        <div class="logo"></div>
+                                    </a>
+                                    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">It academy</button>
+                                    <div id="demo" class="collapse">
+                                        Образовательный центр Парка высоких технологий
+                                    </div>
+
+                                    <div id="out"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="section-chart  margin-bottom">
+
+
+                                <div class="section-chart_graph">
+                                    <div class="section-chart_graph-info">
+                                        <div class="section-chart_graph-info_differiance"></div>
+                                        <div class="section-chart_graph-info_ratio"></div>
+                                    </div>
+                                    <div class='section-chart_graph-allblock'>
+                                        <canvas id="chart_line" class='section-chart_graph-allblock_line'></canvas>
+                                    </div>
+                                    <div class='section-chart_graph-halfblock'>
+                                        <canvas id="diagramm" class='section-chart_graph-halfblock_diagramm'></canvas>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="section-chart_geolocation">
+                                    <div class="section-chart_geolocation-datetime"></div>
+                                    <div class="section-chart_geolocation-location"></div>
+                                </div>
+
+
+
+                                <div class="section-chart_information">
+                                    <div class="section-chart_information-sharestraded">
+                                        <div class="section-chart_information-sharestraded_summa"></div>
+                                        <div class="section-chart_information-sharestraded_summa-text">Shares Traded</div>
+                                    </div>
+                                    <div class="section-chart_information-marcetcup">
+                                        <div class="section-chart_information-marcetcup_market"></div>
+                                        <div class="section-chart_information-marcetcup_market_market-text">Market Cup</div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="section-chart_stock">
+                                    <div class="section-chart_stock-apple">
+                                        <div class="section-chart_stock-apple_name">aapl</div>
+                                        <canvas id="diagramm_apple" class='section-chart_stock-apple_diagramm'></canvas>
+                                    </div>
+                                    <div class="section-chart_stock-differiance">
+                                        <div class="section-chart_stock-differiance_apple-text">Yearly Change</div>
+                                        <div class="section-chart_stock-differiance_yearlychange">
+                                            <div class="section-chart_stock-differiance_yearlychange_summa"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="section-chart_modal-form">
+                                    <div class="section-chart_modal-form_modal_close"></div>
+                                    <input name="text" type="text">
+                                    <input type="submit" value="Применить">
+                                </div>
+                                <div class="section-chart_modal-form_overlay"></div>
+
+                            </div>
+                            <div class="section-about margin-bottom">
+                                <div class="section-about__user-info">
+                                    <div class="section-about__user-photo">
+                                        <button type="button" class="btn btn-link section-about__user-photo_button" data-toggle="modal" data-target="#section-about__user-photo_modal-center">
+                                        </button>
+
+                                        <div class="modal fade" id="section-about__user-photo_modal-center" tabindex="-1" role="dialog">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div id="section-about__demo" class="carousel slide" data-ride="carousel">
+                                                            <!-- Indicators -->
+                                                            <ul class="carousel-indicators">
+                                                                <li data-target="#section-about__demo" data-slide-to="0" class="active"></li>
+                                                                <li data-target="#section-about__demo" data-slide-to="1"></li>
+                                                                <li data-target="#section-about__demo" data-slide-to="2"></li>
+                                                                <li data-target="#section-about__demo" data-slide-to="3"></li>
+                                                                <li data-target="#section-about__demo" data-slide-to="4"></li>
+                                                            </ul>
+
+                                                            <!-- The slideshow -->
+                                                            <div class="carousel-inner">
+                                                                <div class="carousel-item active">
+                                                                    <img src="img/user-photo1.png" alt="photo1" class="section-about__user-photo_modal">
+                                                                </div>
+                                                                <div class="carousel-item">
+                                                                    <img src="img/user-photo2.png" alt="photo2" class="section-about__user-photo_modal">
+                                                                </div>
+                                                                <div class="carousel-item">
+                                                                    <img src="img/user-photo3.png" alt="photo3" class="section-about__user-photo_modal">
+                                                                </div>
+                                                                <div class="carousel-item">
+                                                                    <img src="img/user-photo4.png" alt="photo4" class="section-about__user-photo_modal">
+                                                                </div>
+                                                                <div class="carousel-item">
+                                                                    <img src="img/user-photo5.png" alt="photo5" class="section-about__user-photo_modal">
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- Left and right controls -->
+                                                            <a class="carousel-control-prev" href="#section-about__demo" data-slide="prev">
+                                                                <span class="carousel-control-prev-icon"></span>
+                                                            </a>
+                                                            <a class="carousel-control-next" href="#section-about__demo" data-slide="next">
+                                                                <span class="carousel-control-next-icon"></span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="section-about__user-views">
+                                        <div class="section-about__user-name">Courtney Timmons</div>
+                                        <div class="section-about__user-followers">15,323 followers</div>
+                                    </div>
+                                </div>
+                                <div class="section-about__group-button">
+                                    <button class="section-about__button">
+                                        <div class="section-about__button-text">Edit user</div>
+                                        <div class="section-about__button-icon section-about__button_user"></div>
+                                    </button>
+                                    <button class="section-about__button">
+                                        <div class="section-about__button-text">Web statistics</div>
+                                        <div class="section-about__button-icon section-about__button_stat"></div>
+                                    </button>
+                                    <button class="section-about__button">
+                                        <div class="section-about__button-text">Upload settings</div>
+                                        <div class="section-about__button-icon section-about__button_setting"></div>
+                                    </button>
+                                    <button class="section-about__button">
+                                        <div class="section-about__button-text">Events</div>
+                                        <div class="section-about__button-icon section-about__button_event"></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="section-statistics  margin-bottom">
+                                <div class="storage-wrapper">
+                                    <div class="storage-info">
+                                        <ul class="storage-tabs">
+                                            <li class="storage-tabs__item storage-tabs__item_active">
+                                                <a href="#tab_one" class="storage-tabs__link">Diagram Stats</a>
+                                            </li>
+                                            <li class="storage-tabs__item">
+                                                <a href="#tab_two" class="storage-tabs__link">Month Report</a>
+                                            </li>
+                                        </ul>
+                                        <div id="tab_one" class="storage-stats display-flex">
+                                            <h2 class="storage-stats__h2">Data transfer</h2>
+                                            <div id="storage-stats__graph-diagram-stats" class="storage-stats__graph"></div>
+                                            <div class="storage-stats__legend">
+                                                <div class="storage-info__item-stats storage-info__item-stats_audio">
+                                                    <p class="storage-info__item-stats_key-fonts">audio</p>
+                                                    <p class="storage-info__item-stats_value-fonts" id="percent-audio"></p>
+                                                </div>
+                                                <div class="storage-info__item-stats storage-info__item-stats_video">
+                                                    <p class="storage-info__item-stats_key-fonts">video</p>
+                                                    <p class="storage-info__item-stats_value-fonts" id="percent-video"></p>
+                                                </div>
+                                                <div class="storage-info__item-stats storage-info__item-stats_photo">
+                                                    <p class="storage-info__item-stats_key-fonts">photo</p>
+                                                    <p class="storage-info__item-stats_value-fonts" id="percent-photo"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="tab_two" class="storage-stats display-none">
+                                            <div class="storage-stats__graph-view">
+                                                <input type="radio" id="line-chart" class="storage-stats__graph-selection" name="chart-view" value="line-chart" checked>
+                                                <label for="line-chart">Line chart</label>
+
+                                                <input type="radio" id="bar-chart" class="storage-stats__graph-selection" name="chart-view" value="bar-chart">
+                                                <label for="bar-chart">Bar chart</label>
+
+                                                <input type="radio" id="area-chart" class="storage-stats__graph-selection" name="chart-view" value="area-chart">
+                                                <label for="area-chart">Area chart</label>
+                                            </div>
+                                            <div id="storage-stats__graph-report-month" class="storage-stats__graph"></div>
+                                            <a class="storage-stat__download-report" href="storage/storage-stat__report.xls">download report</a>
+                                        </div>
+                                    </div>
+                                    <div class="storage-action">
+                                        <label for="storage-action__files-upload" class="storage-action__item">
+                                            <div class="storage-action__icon storage-action__icon_upload"></div>
+                                            <div class="storage-action__item_theme">Upload files</div>
+                                        </label>
+                                        <form id="storage-action__form-files-upload" enctype="multipart/form-data" action="/UploadFile" method="post">
+                                            <input name="storage-action__files-upload" id="storage-action__files-upload" type="file" class="display-none" />
+                                        </form>
+
+                                        <label for="storage-action__files-share" class="storage-action__item storage-action__item-share">
+                                            <div class="storage-action__icon storage-action__icon_share"></div>
+                                            <div class="storage-action__item_theme">Share link</div>
+                                            <div class="storage-action__links display-none">
+                                                <a href="https://www.twitter.com" class="storage-action__links_icon storage-action__links_icon-twitter" target="_blank"></a>
+                                                <a href="https://www.facebook.com" class="storage-action__links_icon storage-action__links_icon-facebook" target="_blank"></a>
+                                                <a href="https://www.vk.com" class="storage-action__links_icon storage-action__links_icon-vk" target="_blank"></a>
+                                                <a href="https://www.ok.ru" class="storage-action__links_icon storage-action__links_icon-ok" target="_blank"></a>
+                                            </div>
+                                        </label>
+                                        <input id="storage-action__files-share" type="button" class="display-none" />
+
+                                        <label for="storage-action__files-backup" class="storage-action__item">
+                                            <div class="storage-action__icon storage-action__icon_backup"></div>
+                                            <div class="storage-action__item_theme">Back up</div>
+                                            <input id="storage-action__files-backup" type="button" class="display-none" />
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-myprofile margin-bottom">
+
+                                <nav class="section-myprofile__nav">
+                                    <ul class="menu">
+                                        <li class="section-myprofile__li">
+                                            <div class="section-myprofile__li-menu section-myprofile__li-menu_left">
+                                                <div class="section-myprofile__pic section-myprofile__pic-myprofile"></div>
+                                                <a href="#" class="section-myprofile__navigation-button">My profile</a>
+                                            </div>
+                                            <ul class="section-myprofile__sub-menu">
+                                                <li class="section-myprofile__sub-menu-li">
+                                                    <a class="section-myprofile__submenu-button" href="#">Invite friends</a>
+                                                </li>
+                                                <li class="section-myprofile__sub-menu-li">
+                                                    <a class="section-myprofile__submenu-button" href="#">Find friends</a>
+                                                </li>
+                                                <li class="section-myprofile__sub-menu-li">
+                                                    <a class="section-myprofile__submenu-button" href="#">Log out</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="section-myprofile__li">
+                                            <div class="section-myprofile__li-menu section-myprofile__li-menu_right">
+                                                <div class="section-myprofile__pic section-myprofile__pic-edit"></div>
+                                                <a href="#" class="section-myprofile__navigation-button">Edit</a>
+                                            </div>
+
+                                            <ul class="section-myprofile__sub-menu">
+                                                <li class="section-myprofile__sub-menu-li">
+                                                    <a class="section-myprofile__submenu-button" href="#">Name</a>
+                                                </li>
+                                                <li class="section-myprofile__sub-menu-li">
+                                                    <a class="section-myprofile__submenu-button" href="#">Surname</a>
+                                                    <ul>
+                                                        <li>
+                                                            <a class="section-myprofile__submenu-button" href="#">Organization</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="section-myprofile__submenu-button" href="#">Country</a>
+                                                        </li>
+
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                </nav>
+
+                            </div>
+                            <div class="section-sale margin-bottom">
+                                <input class="section_sale__pic" type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="section-instagram margin-bottom">
+                        <div class="section-instagram__section-pictures">
+                            <div class="section-pictures__image section-pictures__image-01"></div>
+                            <div class="section-pictures__image section-pictures__image-02"></div>
+                            <div class="section-pictures__image section-pictures__image-03"></div>
+                            <div class="section-pictures__image section-pictures__image-04"></div>
+                        </div>
+                        <div class="section-instagram__about">
+                            <div class="about__avatar about__avatar-01"></div>
+                            <div class="about__avatar about__avatar-02"></div>
+                            <div class="about__avatar about__avatar-03"></div>
+                            <div class="about__avatar about__avatar-04"></div>
+                            <div class="about__comment about__comment-01">
+                                <h1 class="about__text">Pavel Rosolko</h1>
+                                <p>Good job!</p>
+                            </div>
+                            <div class="about__comment about__comment-02">
+                                <h1 class="about__text">Adam Levin</h1>
+                                <p>Nice pictures. Want to take some.</p>
+                            </div>
+                            <div class="about__comment about__comment-03">
+                                <h1 class="about__text">Nik Matveev</h1>
+                                <p>Want to be part of your team! </p>
+
+                            </div>
+
+                            <div class="about__comment about__comment-04">
+                                <h1 class="about__text">John Raymons</h1>
+                                <p>Your talent amazes! This is awesome. Excited to see the final product.</p>
+                            </div>
+
+
+                        </div>
+                        <div class="section-instagram__activity">
+                            <div class="activity__section-viewed">
+                                <div class="activity__pic-viewed"></div>
+                                <div class="activity__count-viewed activity__viewed-01">172</div>
+                                <div class="activity__count-viewed activity__viewed-02">209</div>
+                                <div class="activity__count-viewed activity__viewed-03">18</div>
+                                <div class="activity__count-viewed activity__viewed-04">133</div>
+
+
+                            </div>
+                            <div class="activity__section-commented">
+                                <div class="activity__pic-commented"></div>
+                                <div class="activity__count-commented activity__commented-01">9</div>
+                                <div class="activity__count-commented activity__commented-02">11</div>
+                                <div class="activity__count-commented activity__commented-03">3</div>
+                                <div class="activity__count-commented activity__commented-04">18</div>
+                            </div>
+                            <div class="activity__section-liked">
+                                <div class="activity__pic-liked">
+                                    <button type="button" class="btn btn-info heart" data-toggle="collapse" data-target="#demo"></button>
+                                    <div id="demo" class="collapse">
+                                        55
+                                    </div>
+                                </div>
+
+                                <div class="activity__count-liked activity__liked-01">5</div>
+                                <div class="activity__count-liked activity__liked-02">67</div>
+                                <div class="activity__count-liked activity__liked-03">11</div>
+                                <div class="activity__count-liked activity__liked-04">8</div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="section-form margin-bottom">
+                        <form name="contact-form" method="post" action="">
+                            <div class="empty"></div>
+                            <p class="section-form__section-title">Contacts</p>
+                            <div>
+                                <label>
+                                    <input type="email" name="email" required multiple tabindex="1" class="section-form__section-area section-title__contacts">
+                                </label>
+                                <input type="image" src="img/button_1.jpg" class="section-title__button">
+                            </div>
+                            <p class="section-form__section-title">Subject</p>
+                            <div>
+                                <label>
+                                    <input type="text" name="Subject" tabindex="2" class="section-title__subject section-form__section-area" placeholder="You can add a subject">
+                                </label>
+                            </div>
+                            <p class="section-form__section-title">Message</p>
+                            <div>
+                                <label>
+                                    <textarea name="message" tabindex="3" class="section-title__message section-form__section-area" placeholder="Leave your message here"></textarea>
+                                </label>
+                            </div>
+                            <div>
+                                <div class="section-form__background-footer">
+                                    <label>
+                                        <input type="checkbox" tabindex="4" class="background-footer__checkbox_block">
+                                        <span class="backgroun-footer__checkbox-font"> Save a copy</span>
+                                    </label>
+                                    <input type="image" src="img/button_2.jpg" tabindex="6" class="background-footer__button" alt="Send mail">
+                                    <input type="submit" value="Send mail" tabindex="5" class="backgroun-footer__sending-row font_2">
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

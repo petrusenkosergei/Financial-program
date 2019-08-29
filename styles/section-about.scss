@@ -1,0 +1,152 @@
+.section-about__user-info {
+  display: flex;
+  height: 40%;
+  background: #b1a599;
+  border-radius: 5px 5px 0 0;
+}
+
+.section-about__user-photo {
+  display: flex;
+  width: 40%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.section-about__user-photo_button {
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background-size: cover;
+  border: none;
+  box-shadow: 0 0 0 8px #b1a599, 0 0 0 9px #7d7266;
+  animation: move-photo-user 20s infinite;
+}
+
+@keyframes move-photo-user {
+  0%, 100% {
+    background-image: url("../../img/user-photo1.png");
+  }
+  20% {
+    background-image: url("../../img/user-photo2.png");
+  }
+  40% {
+    background-image: url("../../img/user-photo3.png");
+  }
+  60% {
+    background-image: url("../../img/user-photo4.png");
+  }
+  80% {
+    background-image: url("../../img/user-photo5.png");
+  }
+}
+
+.section-about__user-photo_modal {
+  width: 100%;
+  height: 100%;
+}
+
+.section-about__user-views {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 15px;
+}
+
+.section-about__user-name {
+  text-transform: uppercase;
+  color: #fff;
+  @include text-style(17px);
+  text-align: left;
+  line-height: 16px;
+}
+
+.section-about__user-followers {
+  color: #7d7266;
+  @include text-style(13px, normal);
+  line-height: 20px;
+}
+
+.section-about__group-button {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-about__button {
+  background-color: #ffffff;
+  height: 25%;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  border: 0;
+
+  &:last-child {
+    border-radius: 0 0 5px 5px;
+  }
+
+  &:hover {
+    background: #f8f3f0;
+    border-left: 3px solid #4daf7b;
+
+    & .section-about__button_user {
+      width: 15px;
+      height: 16px;
+      background-position: -45px -10px;
+    }
+
+    & .section-about__button_stat {
+      width: 14px;
+      height: 15px;
+      background-position: -45px -46px;
+    }
+
+    & .section-about__button_setting {
+      width: 15px;
+      height: 15px;
+      background-position: -10px -46px;
+    }
+
+    & .section-about__button_event {
+      width: 14px;
+      height: 16px;
+      background-position: -10px -81px;
+    }
+  }
+}
+
+.section-about__button-text {
+  color: #8e8071;
+  @include text-style(15px, normal);
+}
+
+.section-about__button-icon {
+  background-image: url(../../img/css_sprites.png);
+  background-repeat: no-repeat;
+}
+
+.section-about__button_user {
+  width: 15px;
+  height: 16px;
+  background-position: -10px -10px;
+}
+
+.section-about__button_stat {
+  width: 14px;
+  height: 15px;
+  background-position: -115px -46px;
+}
+
+.section-about__button_setting {
+  width: 15px;
+  height: 15px;
+  background-position: -80px -10px;
+}
+
+.section-about__button_event {
+  width: 14px;
+  height: 16px;
+  background-position: -115px -10px;
+}

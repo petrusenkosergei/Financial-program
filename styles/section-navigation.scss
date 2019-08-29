@@ -1,0 +1,258 @@
+
+
+.navigation-buttons {
+
+    width: 82px;
+    background: white;
+    color: $dark-grey;
+    margin: 0 auto;
+    
+ }
+ .navigation__li-menu{
+     width: 25%;
+     height: 65px;
+     text-transform: uppercase;
+     @include text-style-normal(15px);
+ 
+
+
+    
+ }
+ .border-right{
+     border-right: 1px solid $light-grey;
+ }
+ .navigation__menu{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+   
+
+
+    &:after {
+    display: block;
+    content: ' ';
+    clear: both;
+    float: none;
+}
+ }
+.navigation__li-menu {
+    float: left;
+    position: relative;
+
+    &:hover {
+    background-color: $light-grey;
+    border-bottom: 2px solid $green;
+}
+}
+.navigation__li-menu > .navigation-button {
+    margin-top: 17%;
+    margin-left: 40%; 
+    display: block;
+
+    @include text-style-normal(13px);
+    color: $dark-grey;
+    text-decoration: none;
+ 
+}
+
+.navigation__pic{
+    position: absolute; 
+    top: 27%;
+    left: 21%;
+}
+.navigation__pic-checkin{
+    width: 21px;
+    height: 28px;
+    background: url(../../img/navigation_sprite.png) 0px 0px;
+}
+.navigation__pic-events{
+    width: 27px;
+    height: 27px;
+    background: url(../../img/navigation_sprite.png) -22px 0px;
+}
+
+.navigation__pic-account{
+    width: 25px;
+    height: 27px;
+    background: url(../../img/navigation_sprite.png) -49px 0px;
+}
+.navigation__pic-setting{
+    width: 27px;
+    height: 28px;
+    background: url(../../img/navigation_sprite.png) -76px 0px;
+}
+
+
+
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: -20px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	display: none;
+	pointer-events: none;
+
+
+    &:target {
+	display: block;
+	pointer-events: auto;
+}
+}
+.modal-style {
+    width: 370px;
+
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	
+}
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+
+
+    &:hover { background: #00d9ff; }
+}
+
+.modal-style__list{
+    text-align: left;
+
+    &:after{
+    border-bottom: 1px solid #efefef;
+    bottom: 0;
+    content: '';
+    height: 0;
+    left: 58px;
+    position: absolute;
+    right: 12px;
+}
+}
+
+.model-style__instagram{
+    width: 305px;
+    height: 90px;
+    margin:0 auto;
+    margin-bottom: 5px;
+    margin-top: 30px;
+   
+    background-image: url(../../img/instagram.png)
+}
+.button{
+    background: #1890f8;
+    border-radius: 2px;
+    border: 1px solid #1890f8;
+    color: white;
+    width: 81%;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.location{
+    @include text-style(1em);
+    border: 1px solid #efefef;
+    
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: $dark-grey;
+
+
+}
+.decoration_none{
+    text-decoration: none;
+    color: grey;
+    
+}
+.time{
+    float: right;
+    color: grey;
+}
+
+.input{
+    width: 80%;
+    height: 20px;
+    display: block;
+    border-radius: 2px;
+    border: 1px solid grey;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+.logo{
+   background-image: url(../../img/logo.png);
+   width: 200px;
+   height: 263px;
+   margin: 0 auto;
+
+    &:hover{
+    background-image: url(../../img/logo_pink.png) ;
+}
+}
+.display-block{
+    display: block;
+}
+
+.sup{
+    background: red;
+    border-radius:50%;
+   padding-right: 5%;
+   padding-left: 5%;
+  
+}
+
+.list__avatar{
+    
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    float: left;
+    margin-right: 10px;
+    
+}
+
+.list__avatar-01{
+   background-image: url(../../img/avatar6.png);
+}
+  
+.list__avatar-02{
+    background-image: url(../../img/avatar2.png);
+    
+ }
+ .list__avatar-03{
+    background-image: url(../../img/avatar3.png);
+   
+ }
+ .margin{
+     margin-bottom: 10px;
+ }
+.margin:after{
+    border-bottom: 1px solid grey;
+
+content: " ";
+}

@@ -1,0 +1,387 @@
+
+   
+.section-instagram__section-pictures{
+    height: 235px;
+    width: 100%;
+    
+    position:relative;
+}
+.section-pictures__image{
+    border-top-left-radius:  5px;
+    border-top-right-radius: 5px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+  background-repeat: no-repeat; 
+    animation: imagesFading 28s infinite;
+}
+.section-pictures__image-01 {background-image: url(../../img/abstract5.png);
+         animation-delay: 21s;
+}
+.section-pictures__image-02 {background-image: url(../../img/abstract1.png);
+    animation-delay: 14s;
+}
+.section-pictures__image-03 {
+    background-image: url(../../img/abstract2.png);
+    animation-delay: 7s;
+}
+.section-pictures__image-04 {
+    background-image: url(../../img/abstract3.png);
+    animation-delay: 0s;
+}
+
+@keyframes imagesFading {
+    0% {
+      opacity:1;
+    }
+    17% {
+      opacity:1;
+    }
+    25% {
+      opacity:0;
+    }
+    92% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+.section-instagram__about{
+    
+    height: 140px;
+    background: white;
+
+}
+.about__avatar{
+    position:absolute;
+    width: 75px;
+    height: 75px;
+    border-radius: 40px;
+    float: left;
+    box-shadow: 0 0 0 8px #fff, 0 0 0 9px #888;
+    transform: translate(28%,44%); 
+    animation: avatarsFading 28s infinite;
+}
+
+.about__avatar-01{
+   background-image: url(../../img/avatar6.png);
+   animation-delay: 21s; 
+}
+.about_avatar-02{
+    background-image: url(../../img/avatar2.png);
+    animation-delay: 14s;
+ }
+ .about__avatar-03{
+    background-image: url(../../img/avatar3.png);
+    animation-delay: 7s; 
+ }
+ .about__avatar-04{
+    background-image: url(../../img/avatar.png);
+    animation-delay: 0s;
+ }
+ @keyframes avatarsFading {
+    0% {
+      opacity:1;
+    }
+    17% {
+      opacity:1;
+    }
+    25% {
+      opacity:0;
+    }
+    92% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  } 
+ 
+  .about__text{
+  
+    @include text-style(28px);
+    text-align: left;
+    margin-bottom: 10px;
+  }
+.about__comment{
+    position: absolute;
+    text-align:left;
+    width: 250px;
+    @include text-style-normal(11px);
+    height: 140px;
+    transform: translate(50%,26%); 
+    animation: commentsFading 28s infinite;
+}
+.about__comment-01{
+    animation-delay: 20s; 
+    opacity: 0;
+ }
+ .about__comment-02{
+     animation-delay: 13s;
+     opacity: 0;
+  }
+  .about__comment-03{
+     animation-delay: 6.5s; 
+     opacity: 0;
+  }
+  .about__comment-04{
+     animation-delay: 0s;
+     opacity: 0;
+  }
+  @keyframes commentsFading {
+    0% {
+      opacity:0.5;
+    }
+    10% {
+        opacity:1;
+      }
+    17% {
+      opacity:1;
+    }
+  
+    25% {
+      opacity:0;
+    }
+    92% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  } 
+
+
+.section-instagram__activity{
+    height: 50px;
+    background: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+   
+    
+}
+.activity__section-viewed{
+   position:relative;
+   background: $light-grey; 
+   height: 100%;
+   width:  32.5%;
+   display: inline-block;
+   margin-right: 0px;
+   border-bottom-left-radius: 5px;
+}
+.activity__pic-viewed{
+    position:absolute;
+    width: 27px;
+    height: 18px;
+    background: url(../../img/instagram_sprite.png) 0px 0px;  
+    top: 30%;
+    left: 25%;
+    float:left;
+
+&:hover{
+    background: url(../../img/instagram_sprite.png) 0px -20px;   
+}
+}
+
+.activity__count-viewed{
+position: absolute;
+left: 50%;
+top: 30%;
+animation: count_viewedFading 28s infinite;
+font-family: "OpenSans" bold;
+color: #b8aca1;
+}
+
+.activity__viewed-01{
+    animation-delay: 20s; 
+    opacity: 0;
+ }
+ .activity__viewed-02{
+     animation-delay: 13s;
+     opacity: 0;
+  }
+  .activity__viewed-03{
+     animation-delay: 6.5s; 
+     opacity: 0;
+  }
+  .activity__viewed-04{
+     animation-delay: 0s;
+     opacity: 0;
+  }
+
+  @keyframes count_viewedFading {
+    0% {
+      opacity:0.5;
+    }
+    10% {
+        opacity:1;
+      }
+    17% {
+      opacity:1;
+    }
+  
+    25% {
+      opacity:0;
+    }
+    92% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  } 
+.activity__section-commented{
+    position:relative;
+    background: $light-grey; 
+    height: 100%;
+    width:  32.5%;
+    display: inline-block;
+    margin-right: 0px;
+ }
+ .activity__pic-commented{
+    position:absolute;
+    width: 23px;
+    height: 19px;
+    background: url(../../img/instagram_sprite.png) -29px 0px;
+    top: 30%;
+    left: 25%;
+    float:left;
+
+&:hover{
+    background: url(../../img/instagram_sprite.png) -29px -20px;
+    
+}
+ }
+.activity__count-commented{
+position: absolute;
+left: 50%;
+top: 30%;
+animation: count_сommentedFading 28s infinite;
+font-family: "OpenSans" bold;
+color: #b8aca1;
+}
+.activity__commented-01{
+    animation-delay: 20s; 
+    opacity: 0;
+ }
+ .activity__commented-02{
+     animation-delay: 13s;
+     opacity: 0;
+  }
+  .activity__commented-03{
+     animation-delay: 6.5s; 
+     opacity: 0;
+  }
+  .activity__commented-04{
+     animation-delay: 0s;
+     opacity: 0;
+  }
+
+@keyframes count_сommentedFading {
+    0% {
+      opacity:0.5;
+    }
+    10% {
+        opacity:1;
+      }
+    17% {
+      opacity:1;
+    }
+  
+    25% {
+      opacity:0;
+    }
+    92% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  } 
+ .activity__section-liked{
+    position:relative;
+    background: $light-grey; 
+    height: 100%;
+    width:  32.5%;
+    display: inline-block;
+    margin-right: 0px;
+    border-bottom-right-radius: 5px;
+ }
+ .activity__pic-liked{
+    position:absolute;
+width: 21px;
+  height: 17px;
+  
+    top: 30%;
+    left: 25%;
+    float:left;
+
+&:active{
+  background: url(../../img/instagram_sprite.png) -55px -20px;
+  
+}
+}
+
+
+.activity__count-liked{
+position: absolute;
+left: 50%;
+top: 30%;
+animation: count_likedFading 28s infinite;
+font-family: "OpenSans" bold;
+color: #b8aca1;
+}
+.activity__liked-01{
+    animation-delay: 20s; 
+    opacity: 0;
+ }
+ .activity__liked-02{
+     animation-delay: 13s;
+     opacity: 0;
+  }
+  .activity__liked-03{
+     animation-delay: 6.5s; 
+     opacity: 0;
+  }
+  .activity__liked-04{
+     animation-delay: 0s;
+     opacity: 0;
+  }
+
+@keyframes count_likedFading {
+    0% {
+      opacity:0.5;
+    }
+    10% {
+        opacity:1;
+      }
+    17% {
+      opacity:1;
+    }
+  
+    25% {
+      opacity:0;
+    }
+    92% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  } 
+
+  .center{
+      width: 200px;
+      margin: 0 auto;
+  }
+  .inline{
+    display: inline-block;
+  }
+  .heart{
+    background: url(../../img/instagram_sprite.png) -55px 0px;
+    height: 20px;
+    width: 20px;
+    border: 0px solid white;
+  }
+
